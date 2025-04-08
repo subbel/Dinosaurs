@@ -72,6 +72,10 @@
       border-left: 5px solid #ffcc00;
       margin: 10px 0;
     }
+
+    .hidden-one{
+        display: none;
+    }
   </style>
 </head>
 <body>
@@ -92,7 +96,9 @@
     </div>
 
     <p>
-      Dinosaurs are varied from taxonomic, morphological and ecological standpoints...
+      Dinosaurs are varied from taxonomic, morphological and ecological standpoints...<br>
+      <button onclick="toggleFirst()" id="buttonone">Read more</button>
+      <div class="hidden-one" id="hiddenone">Birds, at over 11,000 living species, are among the most diverse groups of vertebrates. Using fossil evidence, paleontologists have identified over 900 distinct genera and more than 1,000 different species of non-avian dinosaurs. Dinosaurs are represented on every continent by both extant species (birds) and fossil remains. Through the first half of the 20th century, before birds were recognized as dinosaurs, most of the scientific community believed dinosaurs to have been sluggish and cold-blooded. Most research conducted since the 1970s, however, has indicated that dinosaurs were active animals with elevated metabolisms and numerous adaptations for social interaction. Some were herbivorous, others carnivorous. Evidence suggests that all dinosaurs were egg-laying, and that nest-building was a trait shared by many dinosaurs, both avian and non-avian</div>
     </p>
 
     <p>
@@ -112,6 +118,17 @@
     function toggleNotes() {
       const note = document.getElementById('note');
       note.classList.toggle('hidden');
+    }
+    function toggleFirst() {
+      if(document.getElementById('hiddenone').style.display == "block"){
+        document.getElementById('hiddenone').style.display= "none";
+        document.getElementById('buttonone').innerText = "Read More"
+      }
+      else{
+        document.getElementById('hiddenone').style.display= "block";
+        document.getElementById('buttonone').innerText = "Hide Content"
+      }
+
     }
   </script>
 
